@@ -4,26 +4,28 @@ import { clsx } from 'clsx';
 
 export interface HeadingProps {
     size?: 'sm' | 'md' | 'lg';
-    color?: 'gray-900' | 'cyan-500' | 'gray-100';
+    color?: 'gray-400' | 'cyan-500' | 'gray-100';
     children: ReactNode;
-    asChild:  boolean;
+    asChild?:  boolean;
+    className?: string
 }
 
-export function Heading({size = 'md', color = 'gray-100', children, asChild}: HeadingProps) {
+export function Heading({size = 'md', color = 'gray-100', children, asChild, className}: HeadingProps) {
     const Comp = asChild ? Slot : 'h2';
 
     return (
         <Comp 
         className={clsx(
-            "font-sans", 
+            "font-sans font-bold", 
             {
                 'text-lg': size === 'sm',
                 'text-xl': size === 'md',
                 'text-2xl': size === 'lg',
-                'text-gray-900': color === 'gray-900',
+                'text-gray-400': color === 'gray-400',
                 'text-cyan-500': color === 'cyan-500',
                 'text-gray-100':  color === 'gray-100'
-            }
+            },
+            className
         )}
         >
             {children}

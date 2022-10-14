@@ -17,7 +17,7 @@ export default {
             }
         },
         color: {
-            options: ['gray-100', 'gray-900', 'cyan-500'],
+            options: ['gray-100', 'gray-400', 'cyan-500'],
             control: {
                 type: 'inline-radio'
             }
